@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "c++ build for AtCoder",
+      "type": "shell",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "command": "g++",
+      "args": [
+        "-std=c++20",
+        "-D",
+        "poe",
+        "-g",
+        "-O2",
+        "${file}",
+        "-I",
+        "/workspaces/competitive/library",
+        "-o",
+        "/workspaces/competitive/a.out"
+      ],
+      "group": "build"
+    }
+  ]
+}
