@@ -1,0 +1,3 @@
+#!/bin/bash
+cd "$(dirname "$0")/../acc" || exit 1
+npx atcoder-cli "$@"
