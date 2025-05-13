@@ -1,0 +1,3 @@
+chmod +x /workspaces/competitive/commands/.bin/*
+echo 'export PATH="/workspaces/competitive/commands/.bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc

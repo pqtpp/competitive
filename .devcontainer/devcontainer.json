@@ -6,7 +6,7 @@
 			"version": "18"
 		}
 	},
-	"postCreateCommand": "bash .devcontainer/setup.sh",
+	"postCreateCommand": "sudo apt update && sudo apt install -y g++-12 && sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 100 && sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100",
 	"customizations": {
 		"vscode": {
 			"settings": {
@@ -14,7 +14,8 @@
 			},
 			"extensions": [
 				"ms-vscode.cpptools",
-				"edonet.vscode-command-runner"
+				"edonet.vscode-command-runner",
+				"ms-python.python"
 			]
 		}
 	}
