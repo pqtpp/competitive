@@ -1,42 +1,17 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
 {
-	"name": "C++",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	// It may be needed when debugging.
-	"runArgs": [
-		"--cap-add=SYS_PTRACE",
-		"--security-opt",
-		"seccomp=unconfined"
-	],
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "gcc -v",
-	// Configure tool-specific properties.
+	"name": "C++20 with g++-12",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"features": {},
+	"postCreateCommand": "sudo apt update && sudo apt install -y g++-12 && sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 100 && sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100",
 	"customizations": {
-		// Configure properties specific to VS Code.
 		"vscode": {
-			// Set *default* container specific settings.json values on container create.
 			"settings": {
-				"terminal.integrated.shell.linux": "bash"
+				"terminal.integrated.defaultProfile.linux": "bash"
 			},
-			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"ms-vscode.cpptools",
-				"ms-vscode.cpptools-themes",
-				"ms-vscode.cpptools-extension-pack",
-				"ms-python.python",
-				"ms-python.debugpy",
-				"ms-python.vscode-pylance",
-				"visualstudioexptteam.vscodeintellicode"
+				"edonet.vscode-command-runner"
 			]
 		}
 	}
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }
