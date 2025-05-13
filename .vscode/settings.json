@@ -1,0 +1,14 @@
+{
+  "C_Cpp.default.cppStandard": "c++20",
+  "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+  "C_Cpp.default.compilerPath": "/usr/bin/g++",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.rulers": [100],
+  "files.autoSave": "onFocusChange",
+  "command-runner.commands": {
+    "Build": "g++ -std=c++20 -Wall -Wextra -O2 -o ${fileDirname}/a.out ${file} && ${fileDirname}/a.out",
+    "Submit with Header": "cd ${fileDirname} && oj-bundle -I /workspaces/competitive/library ${file} > ${fileDirname}/bundled.cpp && acc submit ${fileDirname}/bundled.cpp -- -y && cd /workspaces/competitive",
+    "Test": "cd ${fileDirname} && g++ -std=c++20 -Wall -Wextra -O2 -o a.out ${file} && oj test -c ./a.out"
+  }
+}
